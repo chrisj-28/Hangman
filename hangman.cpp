@@ -59,13 +59,15 @@ int main()
 
         if (currentWord == wantedWord)
         {
-            cout << "\n\n\n\n++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+            system("CLS");
+            cout << "++++++++++++++++++++++++++++++++++++++++++++++" << endl;
             cout << "Word to guess: " << currentWord << endl;
             cout << "Congratulations! You won!!!" << endl;
         }
         else
         {
-            cout << "\n\nYou run out of lives. You lost..." << endl;
+            system("CLS");
+            cout << "You run out of lives. You lost..." << endl;
             cout << "The word was: " << wantedWord << endl;
 
         }
@@ -93,7 +95,8 @@ int main()
 
     } while (playAgain);
 
-    cout << "\n\n\n\nSee you next time!!!";
+    system("CLS");
+    cout << "See you next time!!!";
     
     return 0;
 }
@@ -101,11 +104,12 @@ int main()
 int getWantedWord(string & wantedWord, char acceptedInputs[NUM_LETTERS])
 {
     bool wordIsGood = true;
+    system("CLS");
 
     do
     {
         wordIsGood = true;
-        cout << "\n\n\n\nEnter the word to win: ";
+        cout << "Enter the word to win: ";
         getline (cin, wantedWord);
 
         bool charExists = false;
@@ -131,6 +135,8 @@ int getWantedWord(string & wantedWord, char acceptedInputs[NUM_LETTERS])
         
     } while (!wordIsGood || wantedWord.length() == 0);
 
+    system("CLS");
+
     return wantedWord.length();
     
 }
@@ -142,13 +148,13 @@ string createCurrentWord(int numChar)
     {
         currentWord += '-';
     }
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     return currentWord;
 }
 
 void printGameBoard(string currentWord, int lives, bool lettersUsed[NUM_LETTERS], char acceptedInputs[NUM_LETTERS])
 {
-    cout << "\n\n\n\n++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    system("CLS");
+    cout << "++++++++++++++++++++++++++++++++++++++++++++++" << endl;
     cout << "Number of lives left: " << lives << endl;
     cout << "Letters used: ";
     for (int index = 0; index < NUM_LETTERS; index++)
